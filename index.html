@@ -24,6 +24,14 @@
         overflow-y: scroll;
       }
 
+      #range_val, #range_val2{
+        font-family: Lucida Console, Courier, monospace;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      
+
       .container {
         width: 800px;
         background: white;
@@ -87,7 +95,7 @@
     <header>
       <nav class="container navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">My Scatterplot</span>
+          <span class="navbar-brand mb-0 h1">Climate Change Barchart</span>
         </div>
       </nav>
     </header>
@@ -95,7 +103,7 @@
     <main class="container pb-3">
       <div class="row">    
         <div class="slidecontainer">      
-          <p id="range_val">year = 2003</p>
+          <div id="range_val">Year: 2003</div>
           <button type="button" class="btn btn-info" onclick="changeVal(1)">Up</button>
           <button type="button" class="btn btn-info" onclick="changeVal(-1)">Down</button>
           <input type="range" min="1" max="68" value="50" class="slider" id="myRange" onchange="showVal(this.value)">
@@ -111,13 +119,13 @@
           <div class="form-check">
             <input class="form-check-input" type="radio" name="rd" id="rain" onclick="handleClick(this);" checked>
             <label class="form-check-label" for="rain">
-              rain
+              rainy day
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" onclick="handleClick(this);" type="radio" name="rd" id="snow" >
             <label class="form-check-label" for="snow">
-              snow
+              snowy day
             </label>
           </div>
         </div>
@@ -125,7 +133,7 @@
       </div>
       <div class="row">    
         <div class="slidecontainer">      
-          <p id="range_val2">year = 2003</p>
+          <div id="range_val2">Year: 2003</div>
           <button type="button" class="btn btn-info" onclick="changeVal2(1)">Up</button>
           <button type="button" class="btn btn-info" onclick="changeVal2(-1)">Down</button>
           <input type="range" min="1" max="68" value="50" class="slider" id="myRange2" onchange="showVal2(this.value)">
@@ -237,7 +245,7 @@
 
       function showVal(newVal){
           let year = Number(1953)+Number(newVal);
-          document.querySelector("#range_val").innerHTML=`year = ${year}`;
+          document.querySelector("#range_val").innerHTML=`Year: ${year}`;
           
           if(category === 'rain')
           {
@@ -250,7 +258,7 @@
 
       function showVal2(newVal){
           let year = Number(1953)+Number(newVal);
-          document.querySelector("#range_val2").innerHTML=`year = ${year}`;
+          document.querySelector("#range_val2").innerHTML=`Year: ${year}`;
           
           if(category2 === 'max_temp')
           {

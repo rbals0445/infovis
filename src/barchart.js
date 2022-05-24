@@ -73,7 +73,7 @@ class Barchart {
 			.attr("width", xAxisScale.bandwidth())
 			.attr("x", (d, i) => xAxisScale(i))
 			.attr("y", (d) => yAxisScale(d))
-			.attr("fill", "orange")
+			.attr("fill", "#B5DB92")
 			.on("mouseover", onMouseOver)
 			.on("mouseout", onMouseOut);
 
@@ -92,14 +92,14 @@ class Barchart {
 			.attr("text-anchor", "middle");
 
 		function onMouseOut(d, i) {
-			d3.select(this).transition().duration(400).style("fill", "orange");
+			d3.select(this).transition().duration(400).style("fill", "#B5DB92");
 			d3.select(".val")
 				.selectAll("text")
 				.filter((d, index) => index === i);
 		}
 
 		function onMouseOver(d, i) {
-			d3.select(this).transition().duration(400).style("fill", "red");
+			d3.select(this).transition().duration(400).style("fill", "rgba(181,219,146,0.7)");
 			d3.select(".val")
 				.selectAll("text")
 				.filter((d, index) => index === i)
@@ -164,7 +164,7 @@ class Barchart {
 			.attr("width", xAxisScale.bandwidth())
 			.attr("x", (d, i) => xAxisScale(i))
 			.attr("y", (d) => yAxisScale(d))
-			.attr("fill", "orange")
+			.attr("fill", "#B5DB92")
 			.on("mouseover", onMouseOver)
 			.on("mouseout", onMouseOut);
 
@@ -183,14 +183,14 @@ class Barchart {
 			.attr("text-anchor", "middle");
 
 		function onMouseOut(d, i) {
-			d3.select(this).transition().duration(400).style("fill", "orange");
+			d3.select(this).transition().duration(400).style("fill", "#B5DB92");
 			d3.select(".val")
 				.selectAll("text")
 				.filter((d, index) => index === i);
 		}
 
 		function onMouseOver(d, i) {
-			d3.select(this).transition().duration(400).style("fill", "red");
+			d3.select(this).transition().duration(400).style("fill", "rgba(181,219,146,0.7)");
 			d3.select(".val")
 				.selectAll("text")
 				.filter((d, index) => index === i)
